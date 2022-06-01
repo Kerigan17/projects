@@ -1,8 +1,4 @@
-from concurrent.futures import process
-
-
 points = 0
-artefacts = 0
 artefact_one = False
 artefact_two = False
 artefact_three = False
@@ -25,7 +21,6 @@ answer = int(input("Напишите ответ: "))
 
 if answer == 12:
     artefact_one = True
-    artefacts += 1
     points += 10
     print(f"""{user_name}, ты очень сообразительный, твои очки: {points}""")
 else:
@@ -39,7 +34,6 @@ answer = int(input("Напишите ответ: "))
 
 if answer == 0:
     artefact_two = True
-    artefacts += 1
     points += 20
     print(f"""{user_name}, смотрю, логика - твоё второе имя, твои очки: {points}""")
 else:
@@ -62,7 +56,6 @@ answer = int(input("Напишите ответ: "))
 
 if answer == 980:
     artefact_three = True
-    artefacts += 1
     points += 30
     print(f"""{user_name}, не знаю, отгадал ты или действительно посчитал, но ты прав, твои очки: {points}""")
 else:
@@ -102,7 +95,8 @@ elif artefact_one == artefact_three == True and artefact_two == False :
     print(f"К сожалению, ты не нашел второй артефакт. Счет: {points}")
 elif artefact_two == artefact_three == True and artefact_one == False :
     print(f"К сожалению, ты не нашел первый артефакт. Счет: {points}")
-elif artefacts == 1:
-    print(f"К сожалению, ты нашел только один артефакт. Счет: {points}")
-elif artefacts == 0:
+elif artefact_one == artefact_two == artefact_three == False:
     print(f"К сожалению, ты не нашёл ни один артефакт. Счет: {points}")
+else:
+    print(f"К сожалению, ты нашел только один артефакт. Счет: {points}")
+
