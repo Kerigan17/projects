@@ -3,7 +3,6 @@ long = len(message)
 short = long//2
 letter = message.find('и')
 
-
 cipher_one = message.replace("и", "о").replace("т", "с")
 cipher_two = message[::-1]
 cipher_three = message[1::2] + message[0::2]
