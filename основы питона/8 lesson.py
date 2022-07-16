@@ -1,8 +1,8 @@
-from ast import While
-import string, random
+from string import printable, whitespace
+from random import choice
 
 status = False
-symbols = string.printable.replace(string.whitespace, "")
+symbols = printable.replace(whitespace, "")
 
 long_password = int(input("Какой длинны вы хотите пароль? "))
 while long_password < 7 or long_password > 20:
@@ -12,7 +12,7 @@ while long_password < 7 or long_password > 20:
 while status == False:
     password = ""
     for symbol in range(7):
-        one_symbol = str(random.choice(symbols))
+        one_symbol = str(choice(symbols))
         password += one_symbol
 
     print("Пароль:", password)
