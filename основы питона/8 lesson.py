@@ -4,11 +4,17 @@ from random import choice
 status = False
 symbols = printable.replace(whitespace, "")
 
-long_password = int(input("Какой длинны вы хотите пароль? "))
-while long_password < 7 or long_password > 20:
-    print("Пароль должен быть больше 7 и меньше 20 символов.")
-    long_password = int(input("Какой длинны вы хотите пароль? "))
 
+while status == False:
+    long_password = int(input("Какой длинны вы хотите пароль? "))
+    if long_password < 7:
+        print("\nПароль слишком короткий. Введите его снова")
+    elif long_password > 20:
+        print("\nПароль слишком длинный. Сделай короче")
+    else:
+        status = True
+
+status = False
 while status == False:
     password = ""
     for symbol in range(7):
