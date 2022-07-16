@@ -17,7 +17,7 @@ while status == False:
 status = False
 while status == False:
     password = ""
-    for symbol in range(7):
+    for symbol in range(long_password):
         one_symbol = str(choice(symbols))
         password += one_symbol
 
